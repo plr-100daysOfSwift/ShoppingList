@@ -24,6 +24,13 @@ class ViewController: UITableViewController {
 		
 		let ac = UIAlertController(title: "Add Item", message: nil, preferredStyle: .alert)
 		ac.addTextField()
+		let action = UIAlertAction(title: "OK", style: .default) { [weak ac, weak self] action in
+			if let item = ac?.textFields?[0].text {
+				self?.shoppingList.insert(item, at: 0)
+				let indexPath = IndexPath(row: 0, section: 0)
+				self?.tableView.insertRows(at: [indexPath], with: .automatic)
+			}
+		}
 	}
 
 	// MARK: - Table View Delegate
