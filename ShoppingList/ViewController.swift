@@ -41,7 +41,8 @@ class ViewController: UITableViewController {
 	}
 
 	@objc func clearList() {
-		
+		shoppingList.removeAll()
+		tableView.reloadData()
 		navigationItem.leftBarButtonItem?.isEnabled = false
 	}
 
