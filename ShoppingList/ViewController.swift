@@ -19,6 +19,10 @@ class ViewController: UITableViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
 		navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Clear List", style: .plain, target: self, action: #selector(clearList))
 
+		if shoppingList.count == 0 {
+			navigationItem.leftBarButtonItem?.isEnabled = false
+		}
+
 	}
 
 	@objc func addItem() {
@@ -29,6 +33,7 @@ class ViewController: UITableViewController {
 			self?.shoppingList.insert(item, at: 0)
 			let indexPath = IndexPath(row: 0, section: 0)
 			self?.tableView.insertRows(at: [indexPath], with: .automatic)
+			self?.navigationItem.leftBarButtonItem?.isEnabled = true
 		}
 
 		ac.addAction(action)
@@ -37,6 +42,7 @@ class ViewController: UITableViewController {
 
 	@objc func clearList() {
 		
+		navigationItem.leftBarButtonItem?.isEnabled = false
 	}
 
 	// MARK: - Table View Delegate
