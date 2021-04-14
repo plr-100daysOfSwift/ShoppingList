@@ -13,10 +13,16 @@ class ViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 
 		title = "Shopping List"
 
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+
+	}
+
+	@objc func addItem() {
+		
+	}
 
 	// MARK: - Table View Delegate
 
