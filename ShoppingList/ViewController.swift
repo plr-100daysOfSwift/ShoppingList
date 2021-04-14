@@ -15,6 +15,9 @@ class ViewController: UITableViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 
+		title = "Shopping List"
+
+
 	// MARK: - Table View Delegate
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
