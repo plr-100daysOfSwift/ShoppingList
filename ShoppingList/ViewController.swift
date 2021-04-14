@@ -21,7 +21,6 @@ class ViewController: UITableViewController {
 	}
 
 	@objc func addItem() {
-		
 		let ac = UIAlertController(title: "Add Item", message: nil, preferredStyle: .alert)
 		ac.addTextField()
 		let action = UIAlertAction(title: "OK", style: .default) { [weak ac, weak self] action in
@@ -31,6 +30,9 @@ class ViewController: UITableViewController {
 				self?.tableView.insertRows(at: [indexPath], with: .automatic)
 			}
 		}
+
+		ac.addAction(action)
+		present(ac, animated: true)
 	}
 
 	// MARK: - Table View Delegate
