@@ -17,6 +17,7 @@ class ViewController: UITableViewController {
 		title = "Shopping List"
 
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+		navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Clear List", style: .plain, target: self, action: #selector(clearList))
 
 	}
 
@@ -32,6 +33,10 @@ class ViewController: UITableViewController {
 
 		ac.addAction(action)
 		present(ac, animated: true)
+	}
+
+	@objc func clearList() {
+		
 	}
 
 	// MARK: - Table View Delegate
