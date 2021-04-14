@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
 	@objc func addItem() {
 		
 		let ac = UIAlertController(title: "Add Item", message: nil, preferredStyle: .alert)
+		ac.addTextField()
 	}
 
 	// MARK: - Table View Delegate
